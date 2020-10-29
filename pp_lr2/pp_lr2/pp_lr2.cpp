@@ -16,6 +16,7 @@ int main() {
     int command;
     do {
         setlocale(LC_CTYPE, "rus");
+        std::cout << "Практическая работа №2 Параллельное программирование с использованием основ технологии OpenMP. Лисовой Андрей" << std::endl;
         cout << "Список команд:" << endl;
         cout << "1) Тестирование алгоритма с помощью ручного ввода векторов" << endl;
         cout << "2) Рабочий прогон алгоритма для указанной длины векторов" << endl;
@@ -96,7 +97,7 @@ void test() {
     int size = 10;
     cout << "Введите построчно элементы вектора А:" << endl;
     int* vector1 = create_vector_by_user_input(size);
-    cout << "Введите построчно вектора В" << endl;
+    cout << "Введите построчно элементы вектора В:" << endl;
     int* vector2 = create_vector_by_user_input(size);
     long long int scalar_product = get_consist_scalar_product(vector1, vector2, size);
     cout << "Скалярное произведение данных векторов равно " << scalar_product << endl;
@@ -124,7 +125,7 @@ void run() {
     start = clock();
     scalar_product = get_consist_scalar_product(vector1, vector2, size);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Последовательное выполнение алгоритма заняло " << stop - start << " мс" << endl;  
     cout << endl;
     // 2 потока
@@ -133,7 +134,7 @@ void run() {
     start = clock();
     scalar_product = get_parallel_scalar_product(vector1, vector2, size, thread_v);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Параллельное выполнение алгоритма заняло " << stop - start << " мс при " << thread_v << " потоках" << endl;
     cout << endl;
     // 4 потока
@@ -142,7 +143,7 @@ void run() {
     start = clock();
     scalar_product = get_parallel_scalar_product(vector1, vector2, size, thread_v);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Параллельное выполнение алгоритма заняло " << stop - start << " мс при " << thread_v << " потоках" << endl;
     cout << endl;
     // 8 потоков
@@ -151,7 +152,7 @@ void run() {
     start = clock();
     scalar_product = get_parallel_scalar_product(vector1, vector2, size, thread_v);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Параллельное выполнение алгоритма заняло " << stop - start << " мс при " << thread_v << " потоках" << endl;
     cout << endl;
     // 16 потоков
@@ -160,7 +161,7 @@ void run() {
     start = clock();
     scalar_product = get_parallel_scalar_product(vector1, vector2, size, thread_v);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Параллельное выполнение алгоритма заняло " << stop - start << " мс при " << thread_v << " потоках" << endl;
     cout << endl;
     // 32 потока
@@ -169,7 +170,7 @@ void run() {
     start = clock();
     scalar_product = get_parallel_scalar_product(vector1, vector2, size, thread_v);
     stop = clock();
-    cout << "Скалярное произведение векторов равно " << scalar_product << "." << endl;
+    cout << "Скалярное произведение векторов равно " << scalar_product << endl;
     cout << "Параллельное выполнение алгоритма заняло " << stop - start << " мс при " << thread_v << " потоках" << endl;
     cout << endl;
 }
